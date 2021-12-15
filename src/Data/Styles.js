@@ -123,6 +123,12 @@ export const stylesData = {
       pic: gameConsole,
     },
   ],
+  Nose: [
+    {
+      name: 'Default',
+      pic: noseDefault,
+    },
+  ],
   Mouth: [
     {
       name: 'Default',
@@ -143,12 +149,6 @@ export const stylesData = {
     {
       name: 'Tongue',
       pic: tongue,
-    },
-  ],
-  Nose: [
-    {
-      name: 'Default',
-      pic: noseDefault,
     },
   ],
   Hair: [

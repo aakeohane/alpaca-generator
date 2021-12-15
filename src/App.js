@@ -4,31 +4,31 @@ import StyleButton from "./components/StyleButton";
 import Alpaca from "./components/Alpaca";
 import { stylesData } from "./Data/Styles";
 
+import mergeImages from 'merge-images';
+
 
 function App() {
 
-  const [styleOptions, setStyleOptions] = useState([])
-
+  const [allData, setAllData] = useState([])
+  
   const [activeCategory, setActiveCategory] = useState('Background')
-  const [categoryIndex, setCategoryIndex] = useState(0)
   const [activeStyle, setActiveStyle] = useState([])
-
+  
   const [alpacaImage, setAlpacaImage] = useState([])
+  const [styleOptions, setStyleOptions] = useState([])
+  
+  const [categoryIndex, setCategoryIndex] = useState(0)
 
   useEffect(() => {
-    const alpacaArray = []
+    const alpacaImageArray = []
+    const defaultAlpacaStyles = []
     Object.values(stylesData).forEach(val => {
-      return alpacaArray.push(val[0].pic)
+        alpacaImageArray.push(val[0].pic);
+        defaultAlpacaStyles.push(val[0].name)
     })
-    setAlpacaImage(alpacaArray)
-  }, [])
-
-  useEffect(() => {
-    const alpacaArray = []
-    Object.values(stylesData).forEach(val => {
-      return alpacaArray.push(val[0].name)
-    })
-    setActiveStyle(alpacaArray)
+    setAlpacaImage(alpacaImageArray)
+    setActiveStyle(defaultAlpacaStyles)
+    setAllData(stylesData)
   }, [])
 
   useEffect(() => {
@@ -66,7 +66,29 @@ function App() {
     setAlpacaImage(newAlpacaImage)
   }
 
-  
+  function randomAlpaca() {
+    const randomAlpaca = []
+    const randomActiveStyle = []
+    Object.values(allData).forEach(val => {
+      const randomValue = val.length
+      const randomArrayIndex = Math.floor(Math.random() * randomValue)
+      randomAlpaca.push(val[randomArrayIndex].pic)
+      randomActiveStyle.push(val[randomArrayIndex].name)
+    })
+    setAlpacaImage(randomAlpaca)
+    setActiveStyle(randomActiveStyle)
+  }
+
+  function downloadAlpaca() {
+    // mergeImage dependency takes array of png images, merges, then downloads as one png
+    mergeImages(alpacaImage).then((b64) => {
+      var a = document.createElement("a");
+      a.href = b64;
+      a.download = "Alpaca.png";
+      a.click();
+    });
+  }
+
   const styleButtons = styleOptions.map((item, index) => {
       return (
         <StyleButton
@@ -101,7 +123,11 @@ function App() {
       <h1>Alpaca Generator</h1>
       <div className="main-content">
         <div className="alpaca-img-container">
-          {alpacaDude}
+            {alpacaDude}
+          <div className="random-download-container">
+            <button onClick={() => randomAlpaca()}>🔀   Randomize</button>
+            <button onClick={() => downloadAlpaca()}>🖼   Download</button>
+          </div>
         </div>
         <div className="styling-container">
           <div className="category-container">
