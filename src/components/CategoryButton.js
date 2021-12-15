@@ -1,5 +1,8 @@
 export default function CategoryButton(props) {
+
+  const [activeCategory, name, generateStyleOptions] = [props.activeCategory, props.name, props.generateStyleOptions]
+
   return (
-      <button onClick={props.generateStyleOptions}>{props.name}</button>
+      <button className={activeCategory === name ? 'active' : '' } onClick={generateStyleOptions}>{name}</button>
   )
 }

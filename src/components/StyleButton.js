@@ -1,5 +1,8 @@
 export default function StyleButton(props) {
+
+  const [activeStyle, name, generateAlpacaImage] = [props.activeStyle, props.name, props.generateAlpacaImage]
+
   return (
-      <button>{props.name}</button>
+      <button className={activeStyle === name ? 'active' : '' } onClick={generateAlpacaImage}>{name}</button>
   )
 }
