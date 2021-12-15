@@ -11,7 +11,6 @@ import bangs from '../img/alpaca/hair/bang.png';
 import curls from '../img/alpaca/hair/curls.png';
 import quiff from '../img/alpaca/hair/quiff.png';
 import elegant from '../img/alpaca/hair/elegant.png';
-import fancy from '../img/alpaca/hair/fancy.png';
 import short from '../img/alpaca/hair/short.png';
 
 import earsDefault from '../img/alpaca/ears/default.png';
@@ -62,11 +61,11 @@ export const stylesData = {
       pic: darkblue70,
     },
     {
-      name: 'Orange',
+      name: 'Light Red',
       pic: red50,
     },
     {
-      name: 'Red',
+      name: 'Dark Red',
       pic: red70,
     },
     {
@@ -78,52 +77,18 @@ export const stylesData = {
       pic: green60,
     },
   ],
-  Hair: [
+  Neck: [
     {
       name: 'Default',
-      pic: hairDefault,
+      pic: neckDefault,
     },
     {
-      name: 'Curls',
-      pic: curls,
+      name: 'Bend Backwards',
+      pic: bendBackward,
     },
     {
-      name: 'Quiff',
-      pic: quiff,
-    },
-    {
-      name: 'Bangs',
-      pic: bangs,
-    },
-    {
-      name: 'Elegant',
-      pic: elegant,
-    },
-    {
-      name: 'Fancy',
-      pic: fancy,
-    },
-    {
-      name: 'Short',
-      pic: short,
-    },
-  ],
-  Accessories: [
-    {
-      name: 'Headphones',
-      pic: accessoriesDefault,
-    },
-    {
-      name: 'Earings',
-      pic: earings,
-    },
-    {
-      name: 'Flower',
-      pic: flower,
-    },
-    {
-      name: 'Glasses',
-      pic: glasses,
+      name: 'Bend Forwards',
+      pic: bendForward,
     },
   ],
   Ears: [
@@ -138,28 +103,6 @@ export const stylesData = {
     {
       name: 'Tilt-Forward',
       pic: tiltForward,
-    },
-  ],
-  Eyes: [
-    {
-      name: 'Default',
-      pic: eyesDefault,
-    },
-    {
-      name: 'Angry',
-      pic: angry,
-    },
-    {
-      name: 'Naughty',
-      pic: naughty,
-    },
-    {
-      name: 'Panda',
-      pic: panda,
-    },
-    {
-      name: 'Smart',
-      pic: smart,
     },
   ],
   Leg: [
@@ -202,24 +145,77 @@ export const stylesData = {
       pic: tongue,
     },
   ],
-  Neck: [
-    {
-      name: 'Default',
-      pic: neckDefault,
-    },
-    {
-      name: 'Bend Backwards',
-      pic: bendBackward,
-    },
-    {
-      name: 'Bend Forwards',
-      pic: bendForward,
-    },
-  ],
   Nose: [
     {
       name: 'Default',
       pic: noseDefault,
     },
   ],
+  Hair: [
+    {
+      name: 'Default',
+      pic: hairDefault,
+    },
+    {
+      name: 'Curls',
+      pic: curls,
+    },
+    {
+      name: 'Quiff',
+      pic: quiff,
+    },
+    {
+      name: 'Bangs',
+      pic: bangs,
+    },
+    {
+      name: 'Elegant',
+      pic: elegant,
+    },
+    {
+      name: 'Short',
+      pic: short,
+    },
+  ],
+  Eyes: [
+    {
+      name: 'Default',
+      pic: eyesDefault,
+    },
+    {
+      name: 'Angry',
+      pic: angry,
+    },
+    {
+      name: 'Naughty',
+      pic: naughty,
+    },
+    {
+      name: 'Panda',
+      pic: panda,
+    },
+    {
+      name: 'Smart',
+      pic: smart,
+    },
+  ],
+  Accessories: [
+    {
+      name: 'Headphones',
+      pic: accessoriesDefault,
+    },
+    {
+      name: 'Earings',
+      pic: earings,
+    },
+    {
+      name: 'Flower',
+      pic: flower,
+    },
+    {
+      name: 'Glasses',
+      pic: glasses,
+    },
+  ],
+
 };

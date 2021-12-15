@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CategoryButton from "./components/CategoryButton";
 import StyleButton from "./components/StyleButton";
 import Alpaca from "./components/Alpaca";
@@ -10,19 +10,41 @@ function App() {
   const [styleOptions, setStyleOptions] = useState([])
 
   const [activeCategory, setActiveCategory] = useState('Background')
-  const [activeStyle, setActiveStyle] = useState('')
+  const [categoryIndex, setCategoryIndex] = useState(0)
+  const [activeStyle, setActiveStyle] = useState([])
 
-  const [alpacaImage, setAlpacaImage] = useState([
-    stylesData.Background[2].pic,
-    stylesData.Neck[1].pic,
-    stylesData.Eyes[3].pic
-  ])
+  const [alpacaImage, setAlpacaImage] = useState([])
+
+  useEffect(() => {
+    const alpacaArray = []
+    Object.values(stylesData).forEach(val => {
+      return alpacaArray.push(val[0].pic)
+    })
+    setAlpacaImage(alpacaArray)
+  }, [])
+
+  useEffect(() => {
+    const alpacaArray = []
+    Object.values(stylesData).forEach(val => {
+      return alpacaArray.push(val[0].name)
+    })
+    setActiveStyle(alpacaArray)
+  }, [])
+
+  useEffect(() => {
+    const optionsArray = []
+    stylesData[activeCategory].map(item => {
+      return optionsArray.push(item)
+    })
+    setStyleOptions(optionsArray)
+  }, [activeCategory])
 
 
-  function generateStyleOptions(category) {
+  function generateStyleOptions(category,index) {
     // sets button to active when clicked changing styles
     const activeName = category
     setActiveCategory(activeName)
+    setCategoryIndex(index)
 
     // sets the state to be the options in the category
     const optionsArray = []
@@ -32,30 +54,35 @@ function App() {
     setStyleOptions(optionsArray)
   }
 
-  function generateAlpacaImage(name) {
+  function generateAlpacaImage(name, pic) {
     // sets button to active when clicked changing styles
-    const activeStyle = name
-    setActiveStyle(activeStyle)
+    const newActiveArray = [...activeStyle]
+    newActiveArray.splice(categoryIndex, 1, name)
+    setActiveStyle(newActiveArray)
+    
+    // generates the alpacaImage by replacing image in state array with style picked
+    const newAlpacaImage = [...alpacaImage]
+    newAlpacaImage.splice(categoryIndex, 1, pic)
+    setAlpacaImage(newAlpacaImage)
   }
 
   
-  const styleButtons = styleOptions.map(item => {
+  const styleButtons = styleOptions.map((item, index) => {
       return (
         <StyleButton
           name={item.name}
-          pic={item.pic}
-          activeStyle={activeStyle}
-          generateAlpacaImage={() => generateAlpacaImage(item.name)} 
+          activeStyle={activeStyle[categoryIndex]}
+          generateAlpacaImage={() => generateAlpacaImage(item.name, item.pic, index)} 
         />
       )
     })
 
-  const categoryButtons = Object.keys(stylesData).map(item => {
+  const categoryButtons = Object.keys(stylesData).map((item, index) => {
     return (
       <CategoryButton 
         name={item}
         activeCategory={activeCategory}
-        generateStyleOptions={() => generateStyleOptions(item)}
+        generateStyleOptions={() => generateStyleOptions(item, index)}
       />
     )
   })
