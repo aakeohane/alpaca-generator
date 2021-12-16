@@ -62,6 +62,8 @@ h2 {
 }
 
 button {
+  /* for some reason outline was not adjusting to border-radius on phones
+  changed to use a solid box shadow instead */
   background-color: transparent;
   /* outline: 1.5px solid #80b0f8; */
   box-shadow: 0 0 3px 0 #80b0f8;
