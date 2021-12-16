@@ -90,18 +90,20 @@ function App() {
   }
 
   const styleButtons = styleOptions.map((item, index) => {
-      return (
-        <StyleButton
-          name={item.name}
-          activeStyle={activeStyle[categoryIndex]}
-          generateAlpacaImage={() => generateAlpacaImage(item.name, item.pic, index)} 
-        />
-      )
-    })
+    return (
+      <StyleButton
+        name={item.name}
+        key={index}
+        activeStyle={activeStyle[categoryIndex]}
+        generateAlpacaImage={() => generateAlpacaImage(item.name, item.pic, index)} 
+      />
+    )
+  })
 
   const categoryButtons = Object.keys(stylesData).map((item, index) => {
     return (
-      <CategoryButton 
+      <CategoryButton
+        key={index} 
         name={item}
         activeCategory={activeCategory}
         generateStyleOptions={() => generateStyleOptions(item, index)}
@@ -113,7 +115,7 @@ function App() {
     return (
       <Alpaca
         pic={item}
-        index={index}
+        key={index}
       />
     )
   })
