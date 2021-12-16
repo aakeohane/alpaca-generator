@@ -11,7 +11,7 @@ function App() {
 
   const [allData, setAllData] = useState([])
   
-  const [activeCategory, setActiveCategory] = useState('Background')
+  const [activeCategory, setActiveCategory] = useState("Background")
   const [activeStyle, setActiveStyle] = useState([])
   
   const [alpacaImage, setAlpacaImage] = useState([])
@@ -81,7 +81,8 @@ function App() {
 
   function downloadAlpaca() {
     // mergeImage dependency takes array of png images, merges, then downloads as one png
-    mergeImages(alpacaImage).then((b64) => {
+    mergeImages(alpacaImage)
+    .then((b64) => {
       var a = document.createElement("a");
       a.href = b64;
       a.download = "Alpaca.png";
