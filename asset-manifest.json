@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/alpaca-generator/static/css/main.8618128b.chunk.css",
+    "main.css": "/alpaca-generator/static/css/main.7e0e1919.chunk.css",
     "main.js": "/alpaca-generator/static/js/main.2cc58afc.chunk.js",
     "main.js.map": "/alpaca-generator/static/js/main.2cc58afc.chunk.js.map",
     "runtime-main.js": "/alpaca-generator/static/js/runtime-main.a3fc6ed7.js",
@@ -10,13 +10,13 @@
     "static/js/3.4c8c5353.chunk.js": "/alpaca-generator/static/js/3.4c8c5353.chunk.js",
     "static/js/3.4c8c5353.chunk.js.map": "/alpaca-generator/static/js/3.4c8c5353.chunk.js.map",
     "index.html": "/alpaca-generator/index.html",
-    "static/css/main.8618128b.chunk.css.map": "/alpaca-generator/static/css/main.8618128b.chunk.css.map",
+    "static/css/main.7e0e1919.chunk.css.map": "/alpaca-generator/static/css/main.7e0e1919.chunk.css.map",
     "static/js/2.bb5af0ad.chunk.js.LICENSE.txt": "/alpaca-generator/static/js/2.bb5af0ad.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a3fc6ed7.js",
     "static/js/2.bb5af0ad.chunk.js",
-    "static/css/main.8618128b.chunk.css",
+    "static/css/main.7e0e1919.chunk.css",
     "static/js/main.2cc58afc.chunk.js"
   ]
 }
