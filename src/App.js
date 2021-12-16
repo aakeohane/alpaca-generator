@@ -121,7 +121,7 @@ function App() {
   })
 
   return (
-    <div className="App">
+    <div className="flex-wrapper">
       <h1>Alpaca Generator</h1>
       <div className="main-content">
         <div className="alpaca-img-container">
@@ -145,6 +145,9 @@ function App() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="footer">
+        <footer> Meticulously made by <a href="https://github.com/aakeohane/alpaca-generator" rel="noreferrer" target="_blank">Aaron</a></footer>
       </div>
     </div>
   );
