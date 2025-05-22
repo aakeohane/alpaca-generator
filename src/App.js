@@ -106,6 +106,7 @@ function App() {
       <CategoryButton
         key={index} 
         name={item}
+        className="carousel-item"
         activeCategory={activeCategory}
         generateStyleOptions={() => generateStyleOptions(item, index)}
       />
@@ -140,7 +141,7 @@ function App() {
             </div>
           </div>
           <div className="style-options-container">
-            <h2>Style</h2>
+            <h2>{activeCategory} Style</h2>
             <div className="style-btns-container">
               {styleButtons}
             </div>
