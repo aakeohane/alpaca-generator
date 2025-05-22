@@ -95,6 +95,7 @@ function App() {
       <StyleButton
         name={item.name}
         key={index}
+        className="carousel-item"
         activeStyle={activeStyle[categoryIndex]}
         generateAlpacaImage={() => generateAlpacaImage(item.name, item.pic, index)} 
       />
