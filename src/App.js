@@ -29,6 +29,7 @@ function App() {
     setAlpacaImage(alpacaImageArray)
     setActiveStyle(defaultAlpacaStyles)
     setAllData(stylesData)
+    console.log(stylesData)
   }, [])
 
   useEffect(() => {
@@ -59,6 +60,7 @@ function App() {
     const newActiveArray = [...activeStyle]
     newActiveArray.splice(categoryIndex, 1, name)
     setActiveStyle(newActiveArray)
+    
     
     // generates the alpacaImage by replacing image in state array with style picked
     const newAlpacaImage = [...alpacaImage]
@@ -119,6 +121,7 @@ function App() {
       <Alpaca
         pic={item}
         key={index}
+        activeStyle={activeStyle[categoryIndex]}
       />
     )
   })
